@@ -77,29 +77,57 @@ main {
     gap: 30px;
 }
 
-.senha-display {
-    background: #28a745;
+.nome-destaque {
+    background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.senha-display span {
-    font-size: 6em;
+.nome-destaque h2 {
+    font-size: 4.5em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+}
+
+.nome-destaque.sem-dados {
+    background: linear-gradient(135deg, #6c757d, #868e96);
+}
+
+.senha-referencia {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.senha-label {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #ffdd44;
+}
+
+.senha-referencia span#senhaAtualNumero {
+    font-size: 2.5em;
     font-weight: bold;
     font-family: 'Courier New', monospace;
+    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.senha-display.sem-senha {
-    background: #6c757d;
-}
-
-.pessoa-info h3 {
-    font-size: 2.2em;
-    margin-bottom: 10px;
-    font-weight: bold;
+.pessoa-info {
+    margin-bottom: 20px;
 }
 
 .pessoa-info p {
@@ -244,12 +272,16 @@ footer {
         padding: 20px;
     }
     
-    .senha-display span {
-        font-size: 4em;
+    .nome-destaque h2 {
+        font-size: 3.5em;
     }
     
-    .pessoa-info h3 {
-        font-size: 1.8em;
+    .senha-referencia span#senhaAtualNumero {
+        font-size: 2em;
+    }
+    
+    .senha-label {
+        font-size: 1.5em;
     }
     
     .balcao-info {
@@ -272,12 +304,24 @@ footer {
         text-align: center;
     }
     
-    .senha-display span {
-        font-size: 3em;
+    .nome-destaque {
+        padding: 30px 20px;
     }
     
-    .pessoa-info h3 {
-        font-size: 1.5em;
+    .nome-destaque h2 {
+        font-size: 2.8em;
+    }
+    
+    .senha-referencia {
+        padding: 15px 20px;
+    }
+    
+    .senha-referencia span#senhaAtualNumero {
+        font-size: 1.8em;
+    }
+    
+    .senha-label {
+        font-size: 1.3em;
     }
     
     .balcao-info {

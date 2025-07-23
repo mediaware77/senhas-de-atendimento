@@ -88,7 +88,7 @@ class TelaoInterface {
     }
 
     atualizarSenhaAtual(senhaAtual) {
-        const senhaDisplay = this.elementos.senhaAtualNumero.parentElement;
+        const nomeDestaque = this.elementos.senhaAtualNome.parentElement;
         
         if (senhaAtual) {
             this.elementos.senhaAtualNumero.textContent = senhaAtual.senha;
@@ -96,7 +96,7 @@ class TelaoInterface {
             this.elementos.senhaAtualCpf.textContent = senhaAtual.cpf;
             this.elementos.senhaAtualBalcao.textContent = senhaAtual.balcao_nome.toUpperCase();
             
-            senhaDisplay.classList.remove('sem-senha');
+            nomeDestaque.classList.remove('sem-dados');
             
         } else {
             this.elementos.senhaAtualNumero.textContent = '---';
@@ -104,7 +104,7 @@ class TelaoInterface {
             this.elementos.senhaAtualCpf.textContent = '';
             this.elementos.senhaAtualBalcao.textContent = '';
             
-            senhaDisplay.classList.add('sem-senha');
+            nomeDestaque.classList.add('sem-dados');
         }
     }
 
