@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: var(--fonte-corpo, 'Arial', sans-serif);
+    background: linear-gradient(135deg, var(--cor-background-interno, #1e3c72), var(--cor-background-principal, #2a5298));
     color: white;
     height: 100vh;
     overflow: hidden;
@@ -46,49 +46,50 @@ header h1 {
 main {
     flex: 1;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    grid-template-rows: 2fr 1fr;
+    gap: 20px;
     padding: 40px;
+    overflow: hidden;
 }
 
 .senha-atual {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 40px;
+    padding: 30px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
 }
 
-.senha-atual-header h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #ffdd44;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 .senha-atual-conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nome-destaque {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    color: white;
-    padding: 50px 40px;
+    background: linear-gradient(135deg, var(--cor-card-normal, #28a745), var(--cor-card-normal, #20c997));
+    color: var(--cor-texto-claro, white);
+    padding: 50px 30px;
     border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    margin-bottom: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
     text-align: center;
+    width: 95%;
+    max-width: none;
 }
 
 .nome-destaque h2 {
-    font-size: 4.5em;
+    font-family: var(--fonte-destaque, 'Arial', sans-serif);
+    font-size: var(--tamanho-nome, 5.5em);
     font-weight: bold;
     margin: 0;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
@@ -102,58 +103,31 @@ main {
     background: linear-gradient(135deg, #6c757d, #868e96);
 }
 
-.senha-referencia {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    padding: 20px 30px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.senha-label {
-    font-size: 1.8em;
-    font-weight: 500;
-    color: #ffdd44;
-}
-
-.senha-referencia span#senhaAtualNumero {
-    font-size: 2.5em;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.pessoa-info {
-    margin-bottom: 20px;
-}
-
-.pessoa-info p {
-    font-size: 1.5em;
-    color: #e8e8e8;
-}
 
 .balcao-info {
-    background: #007bff;
-    color: white;
-    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 25px 50px;
     border-radius: 15px;
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+    font-family: var(--fonte-compacto, Arial, sans-serif);
+    border: 2px solid var(--cor-texto-claro, #99CC00);
 }
 
 .ultimas-chamadas {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 30px;
+    padding: 25px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .ultimas-header h2 {
@@ -167,7 +141,10 @@ main {
 .ultimas-lista {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 .ultima-item {
@@ -209,18 +186,6 @@ main {
     font-size: 1.2em;
 }
 
-footer {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.info-sistema {
-    font-size: 1.3em;
-    color: #ffdd44;
-    font-weight: 500;
-}
 
 .connection-error {
     position: fixed;
@@ -269,7 +234,6 @@ footer {
     }
     
     main {
-        grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         gap: 20px;
         padding: 20px;
@@ -279,16 +243,16 @@ footer {
         font-size: 3.5em;
     }
     
-    .senha-referencia span#senhaAtualNumero {
-        font-size: 2em;
-    }
-    
-    .senha-label {
-        font-size: 1.5em;
-    }
-    
     .balcao-info {
         font-size: 1.4em;
+    }
+    
+    .ultimas-chamadas {
+        max-height: 250px;
+    }
+    
+    .ultimas-lista {
+        max-height: 150px;
     }
 }
 
@@ -307,6 +271,15 @@ footer {
         text-align: center;
     }
     
+    main {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .senha-atual {
+        padding: 30px 20px;
+    }
+    
     .nome-destaque {
         padding: 30px 20px;
     }
@@ -315,20 +288,17 @@ footer {
         font-size: 2.8em;
     }
     
-    .senha-referencia {
-        padding: 15px 20px;
-    }
-    
-    .senha-referencia span#senhaAtualNumero {
-        font-size: 1.8em;
-    }
-    
-    .senha-label {
-        font-size: 1.3em;
-    }
-    
     .balcao-info {
         font-size: 1.2em;
         padding: 15px 25px;
+    }
+    
+    .ultimas-chamadas {
+        padding: 20px;
+        max-height: 200px;
+    }
+    
+    .ultimas-lista {
+        max-height: 120px;
     }
 }

@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telão - Sistema de Senhas Procon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charlevoix+Pro:wght@400;700&family=Object+Sans:wght@400;700;900&family=Druk+Text:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>PROCON - SISTEMA DE SENHAS</h1>
+            <h1>SENHA SENDO ATENDIDA</h1>
             <div class="data-hora">
                 <span id="dataAtual"></span>
                 <span id="horaAtual"></span>
@@ -18,20 +21,9 @@
 
         <main>
             <div class="senha-atual">
-                <div class="senha-atual-header">
-                    <h2>SENHA SENDO ATENDIDA</h2>
-                </div>
-                
                 <div id="senhaAtualConteudo" class="senha-atual-conteudo">
                     <div class="nome-destaque">
                         <h2 id="senhaAtualNome">Aguardando próxima chamada...</h2>
-                    </div>
-                    <div class="senha-referencia">
-                        <span class="senha-label">Senha:</span>
-                        <span id="senhaAtualNumero">---</span>
-                    </div>
-                    <div class="pessoa-info">
-                        <p id="senhaAtualCpf"></p>
                     </div>
                     <div class="balcao-info">
                         <span id="senhaAtualBalcao"></span>
@@ -48,12 +40,6 @@
                 </div>
             </div>
         </main>
-
-        <footer>
-            <div class="info-sistema">
-                <p>Dirija-se ao balcão indicado quando sua senha for chamada</p>
-            </div>
-        </footer>
     </div>
 
     <div id="connectionError" class="connection-error" style="display: none;">
@@ -63,6 +49,7 @@
         </div>
     </div>
 
+    <script src="themes.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -9,9 +9,7 @@ class TelaoInterface {
         this.elementos = {
             dataAtual: document.getElementById('dataAtual'),
             horaAtual: document.getElementById('horaAtual'),
-            senhaAtualNumero: document.getElementById('senhaAtualNumero'),
             senhaAtualNome: document.getElementById('senhaAtualNome'),
-            senhaAtualCpf: document.getElementById('senhaAtualCpf'),
             senhaAtualBalcao: document.getElementById('senhaAtualBalcao'),
             ultimasLista: document.getElementById('ultimasLista'),
             connectionError: document.getElementById('connectionError')
@@ -21,6 +19,7 @@ class TelaoInterface {
     }
 
     init() {
+        aplicarTemaNoTelao();
         this.iniciarRelogio();
         this.iniciarAtualizacaoAutomatica();
         this.atualizarDados();
@@ -83,7 +82,7 @@ class TelaoInterface {
     }
 
     abreviarNomeSeNecessario(nomeCompleto) {
-        const LIMITE_CARACTERES = 28;
+        const LIMITE_CARACTERES = 40;
         
         if (!nomeCompleto || nomeCompleto.length <= LIMITE_CARACTERES) {
             return nomeCompleto;
@@ -122,19 +121,22 @@ class TelaoInterface {
         const nomeDestaque = this.elementos.senhaAtualNome.parentElement;
         
         if (senhaAtual) {
-            this.elementos.senhaAtualNumero.textContent = senhaAtual.senha;
             const nomeAbreviado = this.abreviarNomeSeNecessario(senhaAtual.nome);
             this.elementos.senhaAtualNome.textContent = nomeAbreviado.toUpperCase();
-            this.elementos.senhaAtualCpf.textContent = senhaAtual.cpf;
             this.elementos.senhaAtualBalcao.textContent = senhaAtual.balcao_nome.toUpperCase();
+            
+            const tipoSenha = senhaAtual.senha.charAt(0);
+            
+            aplicarEstiloNome(nomeDestaque, tipoSenha);
             
             nomeDestaque.classList.remove('sem-dados');
             
         } else {
-            this.elementos.senhaAtualNumero.textContent = '---';
             this.elementos.senhaAtualNome.textContent = 'AGUARDANDO PRÓXIMA CHAMADA...';
-            this.elementos.senhaAtualCpf.textContent = '';
             this.elementos.senhaAtualBalcao.textContent = '';
+            
+            nomeDestaque.style.color = '';
+            nomeDestaque.style.fontFamily = '';
             
             nomeDestaque.classList.add('sem-dados');
         }
