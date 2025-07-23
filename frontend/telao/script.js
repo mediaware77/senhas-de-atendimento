@@ -82,6 +82,37 @@ class TelaoInterface {
         }
     }
 
+    abreviarNomeSeNecessario(nomeCompleto) {
+        const LIMITE_CARACTERES = 28;
+        
+        if (!nomeCompleto || nomeCompleto.length <= LIMITE_CARACTERES) {
+            return nomeCompleto;
+        }
+        
+        const palavras = nomeCompleto.trim().split(/\s+/);
+        
+        if (palavras.length <= 2) {
+            return nomeCompleto;
+        }
+        
+        const primeiroNome = palavras[0];
+        const ultimoSobrenome = palavras[palavras.length - 1];
+        const nomesMeio = palavras.slice(1, -1);
+        
+        const iniciais = nomesMeio.map(nome => {
+            if (nome.toLowerCase() === 'de' || nome.toLowerCase() === 'da' || 
+                nome.toLowerCase() === 'do' || nome.toLowerCase() === 'dos' || 
+                nome.toLowerCase() === 'das') {
+                return nome.toLowerCase();
+            }
+            return nome.charAt(0).toUpperCase() + '.';
+        });
+        
+        const nomeAbreviado = [primeiroNome, ...iniciais, ultimoSobrenome].join(' ');
+        
+        return nomeAbreviado;
+    }
+
     atualizarInterface(data) {
         this.atualizarSenhaAtual(data.senhaAtual);
         this.atualizarUltimasChamadas(data.ultimasChamadas);
@@ -92,7 +123,8 @@ class TelaoInterface {
         
         if (senhaAtual) {
             this.elementos.senhaAtualNumero.textContent = senhaAtual.senha;
-            this.elementos.senhaAtualNome.textContent = senhaAtual.nome.toUpperCase();
+            const nomeAbreviado = this.abreviarNomeSeNecessario(senhaAtual.nome);
+            this.elementos.senhaAtualNome.textContent = nomeAbreviado.toUpperCase();
             this.elementos.senhaAtualCpf.textContent = senhaAtual.cpf;
             this.elementos.senhaAtualBalcao.textContent = senhaAtual.balcao_nome.toUpperCase();
             
