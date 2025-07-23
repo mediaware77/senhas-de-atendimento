@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface do Balcão - Sistema de Senhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="balcaoTitulo">Balcão</h1>
+            <a href="/" class="btn-voltar">← Voltar</a>
+        </header>
+
+        <div class="content">
+            <div class="proxima-senha">
+                <h2>Próxima Senha</h2>
+                <div id="proximaSenhaCard" class="senha-card">
+                    <div class="senha-numero">
+                        <span id="proximaSenhaNumero">-</span>
+                    </div>
+                    <div class="senha-info">
+                        <p><strong>Nome:</strong> <span id="proximaSenhaNome">-</span></p>
+                        <p><strong>CPF:</strong> <span id="proximaSenhaCpf">-</span></p>
+                        <p><strong>Assunto:</strong> <span id="proximaSenhaAssunto">-</span></p>
+                    </div>
+                </div>
+                
+                <button id="chamarBtn" class="btn-chamar" disabled>
+                    Chamar Próxima Senha
+                </button>
+            </div>
+
+            <div class="historico">
+                <h2>Últimas Chamadas</h2>
+                <div id="historicoLista" class="historico-lista">
+                    <!-- Histórico será carregado via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>Processando...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

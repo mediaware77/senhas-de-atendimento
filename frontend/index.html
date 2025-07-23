@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Senhas - Procon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        
+        .interfaces {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .interface-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .interface-card h2 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+        
+        .interface-card p {
+            color: #6c757d;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .balcoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .balcoes .btn {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Senhas - Procon</h1>
+        
+        <div class="interfaces">
+            <div class="interface-card">
+                <h2>Atendente</h2>
+                <p>Registrar novas pessoas e gerar senhas de atendimento</p>
+                <a href="/atendente" class="btn">Acessar Interface do Atendente</a>
+            </div>
+            
+            <div class="interface-card">
+                <h2>Balcões</h2>
+                <p>Chamar próximas senhas nos balcões de atendimento</p>
+                <div class="balcoes">
+                    <a href="/balcao/1" class="btn">Balcão 1</a>
+                    <a href="/balcao/2" class="btn">Balcão 2</a>
+                    <a href="/balcao/3" class="btn">Balcão 3</a>
+                    <a href="/balcao/4" class="btn">Balcão 4</a>
+                    <a href="/balcao/5" class="btn">Balcão 5</a>
+                    <a href="/balcao/6" class="btn">Balcão 6</a>
+                </div>
+            </div>
+            
+            <div class="interface-card">
+                <h2>Telão Público</h2>
+                <p>Visualização das senhas sendo chamadas para o público</p>
+                <a href="/telao" class="btn">Acessar Telão</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Sistema de Gerenciamento de Senhas - Procon</p>
+        </div>
+    </div>
+</body>
+</html>

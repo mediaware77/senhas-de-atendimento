@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telão - Sistema de Senhas Procon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PROCON - SISTEMA DE SENHAS</h1>
+            <div class="data-hora">
+                <span id="dataAtual"></span>
+                <span id="horaAtual"></span>
+            </div>
+        </header>
+
+        <main>
+            <div class="senha-atual">
+                <div class="senha-atual-header">
+                    <h2>SENHA SENDO ATENDIDA</h2>
+                </div>
+                
+                <div id="senhaAtualConteudo" class="senha-atual-conteudo">
+                    <div class="senha-display">
+                        <span id="senhaAtualNumero">---</span>
+                    </div>
+                    <div class="pessoa-info">
+                        <h3 id="senhaAtualNome">Aguardando próxima chamada...</h3>
+                        <p id="senhaAtualCpf"></p>
+                    </div>
+                    <div class="balcao-info">
+                        <span id="senhaAtualBalcao"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ultimas-chamadas">
+                <div class="ultimas-header">
+                    <h2>ÚLTIMAS CHAMADAS</h2>
+                </div>
+                <div id="ultimasLista" class="ultimas-lista">
+                    <!-- Será preenchido via JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="info-sistema">
+                <p>Dirija-se ao balcão indicado quando sua senha for chamada</p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="connectionError" class="connection-error" style="display: none;">
+        <div class="error-content">
+            <h3>⚠️ Erro de Conexão</h3>
+            <p>Tentando reconectar...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

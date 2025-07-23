@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.data-hora {
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.data-hora span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+.senha-atual {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.senha-atual-header h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #ffdd44;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.senha-atual-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.senha-display {
+    background: #28a745;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.senha-display span {
+    font-size: 6em;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.senha-display.sem-senha {
+    background: #6c757d;
+}
+
+.pessoa-info h3 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pessoa-info p {
+    font-size: 1.5em;
+    color: #e8e8e8;
+}
+
+.balcao-info {
+    background: #007bff;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ultimas-chamadas {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.ultimas-header h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffdd44;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ultimas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ultima-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    border-left: 4px solid #28a745;
+}
+
+.ultima-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.ultima-senha {
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    color: #ffdd44;
+}
+
+.ultima-balcao {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.ultima-nome {
+    font-size: 1em;
+    color: #e8e8e8;
+}
+
+.sem-dados {
+    text-align: center;
+    color: #ccc;
+    font-style: italic;
+    padding: 40px 20px;
+    font-size: 1.2em;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-sistema {
+    font-size: 1.3em;
+    color: #ffdd44;
+    font-weight: 500;
+}
+
+.connection-error {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(220, 53, 69, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.error-content {
+    text-align: center;
+    background: white;
+    color: #dc3545;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.error-content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.error-content p {
+    font-size: 1.2em;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.connection-error .error-content {
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .senha-display span {
+        font-size: 4em;
+    }
+    
+    .pessoa-info h3 {
+        font-size: 1.8em;
+    }
+    
+    .balcao-info {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .data-hora {
+        text-align: center;
+    }
+    
+    .senha-display span {
+        font-size: 3em;
+    }
+    
+    .pessoa-info h3 {
+        font-size: 1.5em;
+    }
+    
+    .balcao-info {
+        font-size: 1.2em;
+        padding: 15px 25px;
+    }
+}
